@@ -1,0 +1,102 @@
+How to run and install
+
+sudo apt update && sudo apt upgrade -y
+cd Smart_Coin_v1_2
+export DISPLAY=:0
+python3 main.py
+killall smartcoin or ps aux | grep main.py
+sudo kill 1455 1456 or sudo killall python
+
+vcgencmd measure_temp
+ls -l /dev/serial/by-id/
+
+-----------------------------------------------------------------------------
+
+How to check sound
+
+alsamixer
+aplay /usr/share/sounds/alsa/Front_Center.wav
+
+-----------------------------------------------------------------------------
+
+How to Force ALSA to Set Default Device
+
+sudo nano /etc/asound.conf
+aplay -l
+
+put this into a file
+
+pcm.!default {
+    type hw
+    card Headphones
+}
+
+ctl.!default {
+    type hw
+    card Headphones
+}
+
+-----------------------------------------------------------------------------
+
+How to create telegram bot
+go to telegram and find BotFather
+type /newbot
+Smart_Coin_001
+Smart_Coin_001_bot and then you will got API
+Then go to web brownser and find chat ID
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
+But you have to remove < and > after /bot
+
+-----------------------------------------------------------------------------
+
+How to make desktop shortcut
+
+nano ~/Desktop/smartcoin.desktop
+
+and put this into a file
+
+[Desktop Entry]
+Name=Smart Coin
+Comment=Run Smart Coin app
+Exec=sh -c "sleep 10; sudo python3 /home/smartcoin001/Smart_Coin_v1_0/main.py"
+Icon=/home/smartcoin001/Smart_Coin_v1_0/Icon.png
+Terminal=true
+Type=Application
+Categories=Utility;
+
+and then make access everywhere
+chmod +x ~/Desktop/smartcoin.desktop
+
+In case its ask for password
+sudo visudo
+At the bottom, add a line like:
+smartcoin005 ALL=(ALL) NOPASSWD: /usr/bin/python3 /home/smartcoin005/Smart_Coin_v1_2/main.py
+
+-----------------------------------------------------------------------------
+
+How to make Autostart with Desktop (GUI) Session
+
+mkdir -p ~/.config/autostart
+cp ~/Desktop/smartcoin.desktop ~/.config/autostart/
+
+-----------------------------------------------------------------------------
+
+How to install talescale
+
+sudo apt update && sudo apt upgrade -y
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo systemctl enable --now tailscaled
+sudo tailscale up
+tailscale status
+tailscale ip -4
+
+-----------------------------------------------------------------------------
+
+How to Install a Firewall
+
+sudo apt update
+sudo apt install ufw -y
+sudo ufw allow in on tailscale0 && sudo ufw allow out on tailscale0
+sudo ufw allow ssh
+sudo ufw enable
+sudo ufw status verbose
