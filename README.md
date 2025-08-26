@@ -1,6 +1,6 @@
 # Smart_Coin
 
-**Version 2.0**
+**Version 1.0**
 
 ## 📦 Project Overview
 
@@ -11,7 +11,7 @@ Smart_Coin is an advanced refill machine controller, supporting NFC, Bitcoin Lig
 - NFC card reading and wallet management
 - Lightning Network payment support
 - Coin and bill acceptor integration
-- Note dispenser control
+- Note dispenser control (This function is available on version 2)
 - Telegram notification system
 - GSM module for SMS alerts
 - QR code generation and reading
@@ -30,3 +30,4 @@ Smart_Coin/
 ├── assets/ # Images, sounds, and JSON data
 ├── README.md
 └── requirements.txt
+
