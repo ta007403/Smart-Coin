@@ -22,12 +22,21 @@ Smart_Coin is an advanced refill machine controller, supporting NFC, Bitcoin Lig
 
 ## 🗂️ Project Structure
 Smart_Coin/
+
 │
+
 ├── main.py
+
 ├── gui/ # 30+ GUI pages and components
+
 ├── modules/ # Hardware and logic modules
+
 ├── utils/ # Helper and utility functions
+
 ├── assets/ # Images, sounds, and JSON data
+
 ├── README.md
+
 └── requirements.txt
+
 
